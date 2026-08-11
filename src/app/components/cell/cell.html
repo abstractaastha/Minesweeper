@@ -1,0 +1,19 @@
+<button
+  type="button"
+  class="cell"
+  [class.revealed]="cell().isRevealed"
+  [class.mine]="cell().isRevealed && cell().isMine"
+  [class.flagged]="cell().isFlagged"
+  [style.color]="numberColor()"
+  [disabled]="cell().isRevealed"
+  (click)="onClick()"
+  (contextmenu)="onRightClick($event)"
+>
+  @if (cell().isFlagged) {
+    <img class="icon" src="/minesweeper-icons/flag.png" alt="flag">
+  } @else if (cell().isRevealed && cell().isMine) {
+    <img class="icon" src="/minesweeper-icons/bomb.png" alt="mine">
+  } @else {
+    {{ label() }}
+  }
+</button>

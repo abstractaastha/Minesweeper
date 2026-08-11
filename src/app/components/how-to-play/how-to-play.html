@@ -1,0 +1,37 @@
+<button type="button" class="trigger" (click)="open()">?</button>
+
+@if (isOpen()) {
+    <div class="overlay" (click)="close()">
+        <div class="scroll" (click)="$event.stopPropagation()">
+            <button type="button" class="close-btn" (click)="close()">X</button>
+            <h2>How to Play</h2>
+
+            <ul class="instructions">
+                <li>
+                    <span class="mini-cell hidden-cell"></span>
+                    <span>Left-click a hidden tile to reveal what's underneath.</span>
+                </li>
+                <li>
+                    <span class="mini-cell revealed-cell">2</span>
+                    <span>Revealed numbers show how many mines hide in the 8 tiles around them.</span>
+                </li>
+                <li>
+                    <img class="icon" src="/minesweeper-icons/flag.png" alt="flag">
+                    <span>Right-click a tile to plant or remove a flag on a suspected mine.</span>
+                </li>
+                <li>
+                    <img class="icon" src="/minesweeper-icons/bomb.png" alt="mine">
+                    <span>Uncover every safe tile without triggering a mine to win.</span>
+                </li>
+                <li>
+                    <img class="icon" src="/minesweeper-icons/smiley.png" alt="reset">
+                    <span>Click the face any time to reset and start a fresh board.</span>
+                </li>
+                <li>
+                    <img class="icon" src="/minesweeper-icons/timer.png" alt="timer">
+                    <span>The timer tracks how fast you clear the board.</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+}

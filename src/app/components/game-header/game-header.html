@@ -1,0 +1,30 @@
+<div class="game-header">
+    <div class="status-bar">
+        <div class="counter">
+            <img src="/minesweeper-icons/bomb.png" alt="mines">
+            {{ minesRemaining() }}</div>
+        <button type="button" class="face" (click)="onReset()">
+            <img [src]="faceIcon()" alt="reset">
+        </button>
+        <div class="counter"> 
+            <img src="/minesweeper-icons/timer.png" alt="timer">
+            {{ secondsElapsed() }}</div>
+    </div>
+
+    <div class="difficulty-picker">
+        @for (entry of difficulties; track entry[0]) {
+            <button
+                type="button"
+                class="difficulty"
+                [class.active]="currentDifficultyKey() === entry[0]"
+                (click)="onDifficultyChange(entry[0])"
+            >{{ entry[1].label }}</button>
+        }
+    </div>
+
+    @if (status() === 'won') {
+        <p class="message win">You win!</p>
+    } @else if (status() === 'lost') {
+        <p class="message lose">Boom! Try again.</p>
+    }
+</div>

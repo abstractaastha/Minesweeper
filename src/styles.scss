@@ -1,0 +1,14 @@
+/* You can add global styles to this file, and also import other style files */
+@use 'retro-theme' as theme;
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  width: 100%;
+  overflow-x: hidden;
+  background: theme.$bg-darkest;
+}

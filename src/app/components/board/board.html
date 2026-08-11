@@ -1,0 +1,12 @@
+<div class="board" [style.grid-template-columns]="'repeat(' + cols() + ', minmax(0, 32px))'">
+    @for (row of grid(); track row[0].row) {
+        @for (cell of row; track cell.col) {
+            <app-cell
+                [cell]="cell"
+                [gameOver]="gameOver()"
+                (reveal)="onReveal(cell.row, cell.col)"
+                (flag)="onFlag(cell.row, cell.col)"
+            ></app-cell>
+        }
+    }
+</div>

@@ -1,0 +1,25 @@
+@use '../../../retro-theme' as theme;
+
+.board {
+    display: grid;
+
+    gap: 2px;
+
+    width: fit-content;
+    max-width: 100%;
+
+    padding: 10px;
+    border-radius: 0;
+
+    background: theme.$panel-bg;
+    box-shadow:
+        inset 3px 3px 0 0 theme.$panel-border-light,
+        inset -3px -3px 0 0 theme.$panel-border-dark,
+        0 0 0 3px theme.$bg-darkest;
+
+    user-select: none;
+}
+
+app-cell {
+    aspect-ratio: 1;
+}
